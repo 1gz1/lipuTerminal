@@ -7,41 +7,40 @@ namespace Terminal
     using namespace std;
     void RunTerminal(int args)
     {
-        char prompt[256]; // ·ÖÅäÒ»¸ö×ã¹»´óµÄÊı×éÀ´´æ´¢ÊäÈëµÄ×Ö·û´®
+        char prompt[256]; // åˆ†é…ä¸€ä¸ªè¶³å¤Ÿå¤§çš„æ•°ç»„æ¥å­˜å‚¨è¾“å…¥çš„å­—ç¬¦ä¸²
         while (true)
         {
             cout << "~>";
             cin.getline(prompt, sizeof(prompt));
-            // Ê¹ÓÃgetlineÀ´°²È«µØ¶ÁÈ¡×Ö·û´®
-            if (strcmp(prompt, "der") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+            // ä½¿ç”¨getlineæ¥å®‰å…¨åœ°è¯»å–å­—ç¬¦ä¸²
+            if (strcmp(prompt, "der") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
-                system("dir"); // ÏÔÊ¾µ±Ç°Ä¿Â¼ÏÂµÄÎÄ¼ş
-            }
-            if (strcmp(prompt, "cles") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+                system("dir"); // æ˜¾ç¤ºå½“å‰ç›®å½•ä¸‹çš„æ–‡ä»¶
+            }else if (strcmp(prompt, "cles") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
-                system("cls"); // ÇåÆÁÃüÁî
-            }
-            if (strcmp(prompt, "ipcerfdr") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+                system("cls"); // æ¸…å±å‘½ä»¤
+            }else if(strcmp(prompt, "ipcerfdr") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
-                system("ipconfig"); // ÏÔÊ¾ÍøÂçÅäÖÃĞÅÏ¢
+                system("ipconfig"); // æ˜¾ç¤ºç½‘ç»œé…ç½®ä¿¡æ¯
             }
-            if (strcmp(prompt, "pyatmo") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+            else if (strcmp(prompt, "pyatmo") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
                 system("python");
-            }
-            if (strcmp(prompt, "ecok") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+            }else if(strcmp(prompt, "ecok") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
                 system("echo > text.txt");
-            }
-            if (strcmp(prompt, "exxt") == 0) // Ê¹ÓÃstrcmpº¯Êı½øĞĞ×Ö·û´®±È½Ï
+            }else if (strcmp(prompt, "exxt") == 0) // ä½¿ç”¨strcmpå‡½æ•°è¿›è¡Œå­—ç¬¦ä¸²æ¯”è¾ƒ
             {
-                exit(0); // ÍË³ö³ÌĞò
+                exit(0); // é€€å‡ºç¨‹åº
+            }
+            else {
+                system(prompt); // æ‰§è¡Œç³»ç»Ÿå‘½ä»¤
             }
         }
     }
 }
 
-// Ö÷º¯Êı
+// ä¸»å‡½æ•°
 int main()
 {
     int args = 0;
